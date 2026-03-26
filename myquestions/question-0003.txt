@@ -1,0 +1,15 @@
+En una aplicación de inversiones, tienes un DataFrame de pandas donde cada fila representa una inversión realizada por un usuario. El DataFrame contiene columnas como usuario, monto_invertido, rendimiento (un valor decimal que puede ser positivo o negativo) y tipo_activo (acciones, bonos, criptomonedas).
+
+Necesito que desarrolles una función en Python llamada simular_rendimientos(df, n_simulaciones) que haga lo siguiente:
+
+- Para cada fila del DataFrame, simule n_simulaciones posibles rendimientos futuros, generando valores aleatorios basados en una distribución normal centrada en el rendimiento actual de cada inversión
+- Calcule el rendimiento promedio simulado para cada inversión
+- Cree una nueva columna llamada rendimiento_simulado_promedio
+- Agrupe los resultados por tipo_activo
+- Calcule para cada tipo de activo:
+  - El promedio del rendimiento_simulado_promedio
+  - La desviación estándar de los rendimientos simulados promedio
+- Devuelva un DataFrame con las columnas:
+  tipo_activo, promedio_rendimiento, desviacion_rendimiento
+
+Puedes usar pandas y numpy.

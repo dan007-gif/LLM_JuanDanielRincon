@@ -1,0 +1,17 @@
+Tengo un DataFrame de pandas con información de canciones en una plataforma de streaming. Cada fila representa una canción e incluye columnas como artista, género, reproducciones, duración en segundos y popularidad (un valor entre 0 y 100).
+
+Necesito que desarrolles una función en Python llamada analizar_canciones(df) que haga lo siguiente:
+
+- Cree una nueva columna llamada eficiencia_popularidad, calculada como popularidad / duración_segundos
+- Calcule el promedio global de reproducciones
+- Filtre las canciones que tengan reproducciones mayores al promedio global
+- Agrupe las canciones restantes por género
+- Calcule para cada género:
+  - El promedio de eficiencia_popularidad
+  - La varianza de popularidad
+  - El percentil 75 de reproducciones
+- Ordene el resultado de mayor a menor según el percentil 75 de reproducciones
+- Devuelva un DataFrame con las columnas:
+  genero, promedio_eficiencia, varianza_popularidad, p75_reproducciones
+
+Puedes usar pandas y numpy.

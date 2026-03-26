@@ -1,0 +1,13 @@
+Tengo un DataFrame de pandas con datos de jugadores en un videojuego online. Cada fila representa un jugador y contiene información como daño total, número de partidas jugadas, precisión y nivel. Además, hay una columna que indica si el jugador pertenece a un rango alto o bajo (por ejemplo, 1 = alto, 0 = bajo).
+
+El problema es que el dataset tiene valores faltantes (NaN), posibles valores atípicos (outliers) y un desbalance en la variable objetivo.
+
+Necesito que desarrolles una función en Python llamada clasificar_jugadores(df, target_col) que haga lo siguiente:
+
+- Separe las variables independientes (X) de la variable objetivo (y)
+- Impute los valores faltantes usando KNNImputer
+- Escale los datos usando RobustScaler
+- Entrene un modelo LogisticRegression con class_weight='balanced'
+- Devuelva el modelo entrenado y las predicciones sobre X
+
+puedes usar pandas numpy y sklearn
