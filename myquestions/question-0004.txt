@@ -1,0 +1,28 @@
+Tienes un DataFrame de pandas con información de usuarios de una aplicación digital. Cada fila representa un usuario e incluye las siguientes columnas:
+
+- tiempo_uso_diario: tiempo promedio que el usuario utiliza la aplicación cada día (en minutos)
+- numero_interacciones: cantidad de acciones realizadas por el usuario (clics, likes, etc.)
+- contenido_consumido: número de contenidos visualizados por el usuario
+- nivel_actividad: una puntuación numérica que representa el nivel de interacción del usuario (entre 0 y 100)
+
+Ten en cuenta que pueden existir valores faltantes (NaN) en algunas columnas.
+
+Además, se dispone de una columna llamada tipo_usuario que representa una categorización hipotética del usuario (por ejemplo: "casual", "frecuente", "intensivo"), la cual se usará únicamente para evaluar la calidad del agrupamiento.
+
+Necesito que desarrolles una función en Python llamada agrupar_usuarios(df, n_clusters) que haga lo siguiente:
+
+- Separe la columna tipo_usuario del resto del DataFrame (no debe usarse para entrenar el modelo)
+- Seleccione únicamente las columnas numéricas
+- Impute los valores faltantes utilizando SimpleImputer con estrategia constante (rellenando con 0)
+- Escale los datos utilizando StandardScaler de sklearn
+- Aplique un modelo de clustering AgglomerativeClustering con n_clusters grupos
+- Asigne a cada fila un grupo (cluster), representado por un número entero
+- Añada una nueva columna llamada cluster al DataFrame
+- Calcule el Silhouette Score del clustering obtenido
+- Calcule una métrica de pureza del cluster comparando los clusters obtenidos con la columna tipo_usuario
+- Devuelva una tupla con:
+  - El DataFrame original con la columna cluster añadida
+  - El Silhouette Score
+  - La pureza del clustering
+
+Puedes usar pandas, numpy y sklearn.
