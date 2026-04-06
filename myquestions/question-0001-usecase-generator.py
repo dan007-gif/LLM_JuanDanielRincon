@@ -26,7 +26,11 @@ def generar_caso_de_uso_preparar_jugadores():
 
     # 3. Variable objetivo desbalanceada (20% positivos)
     target_col = "desafio_completado"
-    y = np.random.choice([0, 1], size=n_rows, p=[0.8, 0.2])  # 80% 0, 20% 1
+    y = np.random.choice([0, 1], size=n_rows, p=[0.8, 0.2])
+    if len(np.unique(y)) < 2:
+       y[0] = 0
+       y[1] = 1
+
     df[target_col] = y
 
     # 4. Construir el input (diccionario de argumentos)
